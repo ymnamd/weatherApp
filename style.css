@@ -70,6 +70,17 @@ body {
     font-weight: 400;
     margin-top: -10px;
 }
+.country-code {
+    font-weight: 500;
+}
+.min-max {
+    margin-top: -50px;
+    font-size: 10px;
+}
+.min-max h2 {
+    display: inline-block;
+    margin: 7px;
+}
 .details {
     display: flex;
     align-items: center; 

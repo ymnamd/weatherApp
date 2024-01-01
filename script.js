@@ -9,6 +9,7 @@ async function checkWeather(city) {
     // fetch weather details through API
     const response = await fetch(apiUrl + `&q=${city}` + "&appid=" + apiKey);
     var data = await response.json();
+    console.log(data)
     
     // invalid search
     if (response.status == 404) {
@@ -20,7 +21,10 @@ async function checkWeather(city) {
     else {
     // change weather details
     document.querySelector('.city').innerHTML = data.name;
+    document.querySelector('.country-code').innerHTML = data.sys.country;
     document.querySelector('.temperature').innerHTML = Math.round(data.main.temp) + "°C";
+    document.querySelector('.min').innerHTML = "Low: " + Math.round(data.main.temp_min) + "°C";
+    document.querySelector('.max').innerHTML = "High: " + Math.round(data.main.temp_max) + "°C";
     document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
     document.querySelector('.wind').innerHTML = data.wind.speed + "km/h";
     
